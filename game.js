@@ -39,13 +39,18 @@ touchRight.addEventListener('touchend', () => {
 });
 
 window.addEventListener('touchstart', (e) => {
+    // ゲームがまだ始まっていない場合はゲームを開始
+    if (!isGameStarted) {
+        isGameStarted = true;
+        gameLoop();
+    }
+
+    // プレイヤーが地面にいる場合はジャンプ
     if (playerY === FLOOR_Y) {
         playerVelocityY = JUMP_SPEED;
         jumpSound.play();
     }
 });
-
-
 
 const ObjectType = {
   SMALL: 'small',
