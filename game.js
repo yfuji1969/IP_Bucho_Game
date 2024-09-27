@@ -21,9 +21,11 @@ const MAX_COLLISIONS = 3;
 const BONUS_SCORE = 500;
 const FLOOR_Y = 40; // 床面を y=40 に設定
 
+// 左右移動のタッチエリア設定
 const touchLeft = document.getElementById('touch-left');
 const touchRight = document.getElementById('touch-right');
 
+// 左側をタッチしたら左に移動
 touchLeft.addEventListener('touchstart', () => {
     keysPressed['ArrowLeft'] = true;
 });
@@ -31,6 +33,7 @@ touchLeft.addEventListener('touchend', () => {
     keysPressed['ArrowLeft'] = false;
 });
 
+// 右側をタッチしたら右に移動
 touchRight.addEventListener('touchstart', () => {
     keysPressed['ArrowRight'] = true;
 });
@@ -38,8 +41,8 @@ touchRight.addEventListener('touchend', () => {
     keysPressed['ArrowRight'] = false;
 });
 
+// 画面タッチでゲーム開始とジャンプ
 window.addEventListener('touchstart', (e) => {
-    // ゲームがまだ始まっていない場合はゲームを開始
     if (!isGameStarted) {
         isGameStarted = true;
         gameLoop();
