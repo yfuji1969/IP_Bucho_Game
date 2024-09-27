@@ -21,6 +21,32 @@ const MAX_COLLISIONS = 3;
 const BONUS_SCORE = 500;
 const FLOOR_Y = 40; // 床面を y=40 に設定
 
+const touchLeft = document.getElementById('touch-left');
+const touchRight = document.getElementById('touch-right');
+
+touchLeft.addEventListener('touchstart', () => {
+    keysPressed['ArrowLeft'] = true;
+});
+touchLeft.addEventListener('touchend', () => {
+    keysPressed['ArrowLeft'] = false;
+});
+
+touchRight.addEventListener('touchstart', () => {
+    keysPressed['ArrowRight'] = true;
+});
+touchRight.addEventListener('touchend', () => {
+    keysPressed['ArrowRight'] = false;
+});
+
+window.addEventListener('touchstart', (e) => {
+    if (playerY === FLOOR_Y) {
+        playerVelocityY = JUMP_SPEED;
+        jumpSound.play();
+    }
+});
+
+
+
 const ObjectType = {
   SMALL: 'small',
   MEDIUM: 'medium',
