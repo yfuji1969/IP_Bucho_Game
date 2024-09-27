@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Objects Game</title>
+    <style>
+        @font-face {
+            font-family: 'PixelMplus12';
+            src: url('./assets/PixelMplus12-Regular.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'PixelMplus12', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+
+        canvas {
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+<!--    <div id="instructions" style="color: white; text-align: center; margin-top: 10px;">
+        Use arrow keys to move. Press up arrow or space to jump. Press R to restart.
+        </div>
+-->
+    <script src="game.js"></script>
+</body>
+</html>
